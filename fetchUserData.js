@@ -20,15 +20,17 @@ function getUserData(){
 
 function getUserPosts(data){
     return new Promise((resolve, reject) => {
-        if(data){
-            console.log("Getting User Posts.....");
-            const userPosts = data.posts[0]
-            console.log("User Posts Fetched Successfully");
-            resolve(userPosts)
-        }
-        else{
-            reject("No Posts Feteched")
-        }
+        setTimeout(() => {
+            if(data){
+                console.log("Getting User Posts.....");
+                const userPosts = data.posts[0]
+                console.log("User Posts Fetched Successfully");
+                resolve(userPosts)
+            }
+            else{
+                reject("No Posts Feteched")
+            } 
+        }, 2000);
     })
 }
 
