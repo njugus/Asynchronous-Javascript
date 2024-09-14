@@ -5,10 +5,8 @@ async function retryFunction(url, retries) {
     for (let attempt = 1; attempt <= retries; attempt++) {
         try {
             console.log(`Attempt ${attempt}: Fetching data...`);
-
             // Fetch data from the URL
             const response = await fetch(url);
-
             // If response is ok, parse the data
             if (response.ok) {
                 const data = await response.json();
